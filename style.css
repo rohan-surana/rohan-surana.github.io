@@ -703,30 +703,28 @@ footer p { font-size: 0.8125rem; color: var(--ink3); font-weight: 500; }
 .buy-status.on { display: block; }
 .buy-status a { color: var(--accent); font-weight: 700; text-decoration: underline; }
 
-/* mobile sticky bar, phones and small tablets only */
-.buy-bar { display: none; }
-@media (max-width: 767.98px) {
-  body:has(.buy-bar) { padding-bottom: calc(76px + env(safe-area-inset-bottom)); }
-  .buy-bar {
-    position: fixed; left: 0; right: 0; bottom: 0; z-index: 90;
-    display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 0.5rem 1rem;
-    padding: 10px var(--gutter) calc(10px + env(safe-area-inset-bottom));
-    background: rgba(var(--bg-rgb), 0.96); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-    border-top: 1px solid var(--border); box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.06);
-    transform: translateY(calc(100% + 8px)); visibility: hidden;
-    transition: transform 0.25s ease, visibility 0s linear 0.25s;
-  }
-  .buy-bar.show { transform: none; visibility: visible; transition: transform 0.25s ease, visibility 0s; }
-  .buy-bar .buy-status { grid-column: 1 / -1; }
-  .buy-bar .buy-btn { padding: 0 1.5rem; }
-  .buy-bar-price { font-family: var(--serif); font-size: 1.35rem; font-weight: 500; line-height: 1.2; color: var(--ink); }
-  .buy-bar-price span { font-family: var(--sans); font-size: 0.875rem; font-weight: 500; color: var(--ink3); }
+/* sticky bar on the service pages, every screen size (2026-10-24; was phones only) */
+body:has(.buy-bar) { padding-bottom: calc(76px + env(safe-area-inset-bottom)); }
+.buy-bar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 90;
+  display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 0.5rem 1rem;
+  padding: 10px var(--edge) calc(10px + env(safe-area-inset-bottom));
+  background: rgba(var(--bg-rgb), 0.96); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid var(--border); box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.06);
+  transform: translateY(calc(100% + 8px)); visibility: hidden;
+  transition: transform 0.25s ease, visibility 0s linear 0.25s;
 }
+.buy-bar.show { transform: none; visibility: visible; transition: transform 0.25s ease, visibility 0s; }
+.buy-bar .buy-status { grid-column: 1 / -1; }
+.buy-bar .buy-btn { padding: 0 1.5rem; }
+.buy-bar .btn-main { padding-left: 1.5rem; padding-right: 1.5rem; white-space: nowrap; }
+.buy-bar-price { font-family: var(--serif); font-size: 1.35rem; font-weight: 500; line-height: 1.2; color: var(--ink); }
+.buy-bar-price span { font-family: var(--sans); font-size: 0.875rem; font-weight: 500; color: var(--ink3); }
 @media (max-width: 340px) {
   .buy-bar { gap: 0.5rem 0.75rem; }
-  .buy-bar .buy-btn { padding: 0 1rem; }
+  .buy-bar .buy-btn, .buy-bar .btn-main { padding-left: 1rem; padding-right: 1rem; }
 }
-@media (max-width: 767.98px) and (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce) {
   .buy-bar, .buy-bar.show { transition: none; }
 }
 

@@ -210,26 +210,7 @@ document.addEventListener('click', function(e){
 <button class="buy-btn" type="button" data-buy>Get the Tracker</button>
 </div>
 <script src="../buy.js"></script>
-<script>
-(function(){
-var bar=document.getElementById('buyBar'), heroBuy=document.getElementById('heroBuy');
-/* Mobile sticky bar: shown only after the hero button has scrolled above the viewport. Hidden while the
-   bottom checkout card's button is on screen or the Razorpay modal is open. */
-var heroGone=false, footBuyVisible=false;
-function updateBar(){
-  var show=heroGone && !footBuyVisible && !document.body.classList.contains('rzp-open');
-  bar.classList.toggle('show',show);
-  bar.setAttribute('aria-hidden',show?'false':'true');
-  if(show) bar.removeAttribute('inert'); else bar.setAttribute('inert','');
-}
-document.addEventListener('rzpchange',updateBar);
-if('IntersectionObserver' in window){
-  new IntersectionObserver(function(es){ es.forEach(function(e){ heroGone=!e.isIntersecting && e.boundingClientRect.top<0; }); updateBar(); }).observe(heroBuy);
-  var footBuy=document.querySelector('.detail-foot-card [data-buy]');
-  if(footBuy) new IntersectionObserver(function(es){ es.forEach(function(e){ footBuyVisible=e.isIntersecting; }); updateBar(); }).observe(footBuy);
-}
-})();
-</script>
+<script src="../buy-bar.js"></script>
 <script>
 const hamburger=document.getElementById('hamburger');
 const mobileMenu=document.getElementById('mobileMenu');
