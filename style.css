@@ -156,7 +156,7 @@ nav {
   display: inline-flex; align-items: center; gap: 0.5rem;
   font-size: 0.9375rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
   color: var(--accent); margin-bottom: 1.75rem;
-  opacity: 0; animation: fadeUp 0.7s ease forwards 0.1s;
+  opacity: 0; animation: fadeUp 0.5s ease forwards 0.05s;
 }
 .hero-tag::before { content: ''; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
 
@@ -165,7 +165,7 @@ nav {
   font-size: clamp(2.4rem, 4vw, 4rem);
   font-weight: 500; line-height: 1.1; letter-spacing: -0.02em;
   color: var(--ink); margin-bottom: 1.75rem;
-  opacity: 0; animation: fadeUp 0.8s ease forwards 0.2s;
+  opacity: 0; animation: fadeUp 0.5s ease forwards 0.1s;
 }
 .hero-h1 em {
   font-style: italic;
@@ -174,11 +174,11 @@ nav {
 .hero-sub {
   font-size: 1rem; font-weight: 400; color: var(--ink2); line-height: 1.8;
   margin-bottom: 2.5rem;
-  opacity: 0; animation: fadeUp 0.8s ease forwards 0.35s;
+  opacity: 0; animation: fadeUp 0.5s ease forwards 0.15s;
 }
 .hero-actions {
   display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;
-  opacity: 0; animation: fadeUp 0.8s ease forwards 0.5s;
+  opacity: 0; animation: fadeUp 0.5s ease forwards 0.2s;
 }
 .btn-main {
   background: var(--accent);
@@ -221,7 +221,7 @@ nav {
   margin: 0 0 2rem auto;
   border-radius: 18px;
   overflow: hidden;
-  opacity: 0; animation: fadeUp 0.8s ease forwards 0.3s;
+  opacity: 0; animation: fadeUp 0.5s ease forwards 0.1s;
   background: var(--accent);
   padding: 5px;
   box-shadow: 0 24px 60px rgba(13,10,6,0.16), 0 6px 20px rgba(var(--accent-rgb), 0.18);
@@ -243,7 +243,7 @@ nav {
 /* roles line (hero + contact) and bold proof sentence in hero-sub */
 .hero-sub strong { font-weight: 700; color: var(--ink); }
 /* proof stat under the hero paragraph */
-.hero-stat { display: flex; align-items: center; gap: 0.9rem; opacity: 0; animation: fadeUp 0.8s ease forwards 0.42s; }
+.hero-stat { display: flex; align-items: center; gap: 0.9rem; opacity: 0; animation: fadeUp 0.5s ease forwards 0.15s; }
 .hero-stat-num { font-family: var(--serif); font-weight: 500; font-size: 2.6rem; line-height: 1; color: var(--accent); flex-shrink: 0; }
 .hero-stat-label { font-size: 1rem; line-height: 1.45; color: var(--ink2); max-width: 260px; }
 /* hero vertical rhythm: keep both rows together (no stretch to 100vh), then
