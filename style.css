@@ -622,7 +622,7 @@ footer p { font-size: 0.8125rem; color: var(--ink3); font-weight: 500; }
 }
 
 /* TRACKER DETAIL: testimonial row, best-fit columns, sample sheet, cross-sell */
-.proof-row { display: flex; gap: var(--space-card); overflow-x: auto; scroll-snap-type: x mandatory; padding: 0.25rem 0 1rem; margin: 0 0 0.5rem; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: var(--border) transparent; }
+.proof-row { display: flex; align-items: flex-start; gap: var(--space-card); overflow-x: auto; scroll-snap-type: x mandatory; padding: 0.25rem 0 1rem; margin: 0 0 0.5rem; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: var(--border) transparent; }
 .proof-card { flex: 0 0 min(300px, 82%); scroll-snap-align: start; background: var(--card-bg); border: 1.5px solid var(--border); border-radius: 10px; padding: 1.25rem 1.35rem; display: flex; flex-direction: column; gap: 0.6rem; }
 .proof-stars { color: #F5A623; font-size: 1rem; letter-spacing: 0.12em; line-height: 1; }
 .detail-section .proof-card p { font-size: 0.9375rem; color: var(--ink2); line-height: 1.65; flex: 1; }
@@ -630,6 +630,7 @@ footer p { font-size: 0.8125rem; color: var(--ink3); font-weight: 500; }
 .proof-card span { font-size: 0.8125rem; font-weight: 700; color: var(--ink3); }
 .detail-section .proof-card p.proof-text { flex: none; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; }
 .detail-section .proof-card p.proof-text.expanded { -webkit-line-clamp: unset; overflow: visible; }
+.detail-section .proof-row .proof-card { min-height: 17rem; }
 .proof-more { background: none; border: none; padding: 0; align-self: flex-start; font-family: var(--sans); font-size: 0.8125rem; font-weight: 700; color: var(--accent); cursor: pointer; }
 .proof-more:hover { text-decoration: underline; }
 .proof-card .proof-more + span, .proof-card p.proof-text + span { margin-top: auto; }
