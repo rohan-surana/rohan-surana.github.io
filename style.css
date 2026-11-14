@@ -886,3 +886,11 @@ body:has(.buy-bar) { padding-bottom: calc(76px + env(safe-area-inset-bottom)); }
 .plan-save { font-size: 0.8rem; font-weight: 700; color: var(--ink3); }
 .plan-save s { font-weight: 500; margin-left: 0.15rem; }
 .story-after-pricing { margin-top: var(--space-section); }
+/* uniform prices (2026-11-14): very small phones stack the bar label (plan above price) and put the
+   struck-out price under ₹1,199 in the hero card, so the full words still fit */
+@media (max-width: 360px) {
+  .buy-bar.two-plans .buy-btn { line-height: 1.15; }
+  .buy-bar.two-plans .lbl-short > span { display: block; }
+  .buy-bar.two-plans .lbl-short .lbl-sep { display: none; }
+  .plan-mini .plan-price s { display: block; margin-left: 0; }
+}
