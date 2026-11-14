@@ -59,6 +59,14 @@ document.addEventListener('click', function(e){
   if (e.target.closest && e.target.closest('.PaymentButton')) {
     gtag('event', 'begin_checkout', {currency: 'INR', value: 499, items: [{item_name: 'Startup Operator Roles Tracker'}]});
   }
+  var book = e.target.closest && e.target.closest('a[href*="neetocal.com"]');
+  if (book) {
+    gtag('event', 'book_call_click', {call_name: book.href.split('/').pop(), link_position: book.closest('.buy-bar') ? 'sticky_bar' : (book.closest('.detail-foot') ? 'bottom' : 'top'), page_path: location.pathname});
+  }
+  var svc = e.target.closest && e.target.closest('a[href^="/services/"]');
+  if (svc) {
+    gtag('event', 'service_click', {service: svc.getAttribute('href').split('/').pop(), page_path: location.pathname});
+  }
 });
 </script>
 <meta name="google-site-verification" content="rSZuUws3MXjEv1-rx-bdvgYhT3SgqZwdcEEhuDSw7Ss" />

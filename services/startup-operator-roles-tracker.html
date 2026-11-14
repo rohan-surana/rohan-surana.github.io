@@ -14,13 +14,13 @@
 <meta content="40+ Founder's Office, Chief of Staff, Entrepreneur-in-Residence, Growth, and Strategy roles added daily, sourced from founder posts and comment threads that never make it to LinkedIn Jobs." property="og:description"/>
 <meta content="website" property="og:type"/>
 <meta content="https://rohansurana.com/services/startup-operator-roles-tracker" property="og:url"/>
-<meta content="https://rohansurana.com/preview.png" property="og:image"/>
+<meta content="https://rohansurana.com/og/startup-operator-roles-tracker.jpg" property="og:image"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="Startup Operator Roles Tracker" name="twitter:title"/>
 <meta content="40+ Founder's Office, Chief of Staff, Entrepreneur-in-Residence, Growth, and Strategy roles added daily, sourced from founder posts and comment threads that never make it to LinkedIn Jobs." name="twitter:description"/>
-<meta content="https://rohansurana.com/preview.png" name="twitter:image"/>
+<meta content="https://rohansurana.com/og/startup-operator-roles-tracker.jpg" name="twitter:image"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&amp;family=Fraunces:opsz,wght,SOFT@9..144,400..700,35&amp;display=swap" rel="stylesheet"/>
@@ -35,7 +35,42 @@ document.addEventListener('click', function(e){
   if (e.target.closest && e.target.closest('.PaymentButton')) {
     gtag('event', 'begin_checkout', {currency: 'INR', value: 499, items: [{item_name: 'Startup Operator Roles Tracker'}]});
   }
+  var book = e.target.closest && e.target.closest('a[href*="neetocal.com"]');
+  if (book) {
+    gtag('event', 'book_call_click', {call_name: book.href.split('/').pop(), link_position: book.closest('.buy-bar') ? 'sticky_bar' : (book.closest('.detail-foot') ? 'bottom' : 'top'), page_path: location.pathname});
+  }
+  var svc = e.target.closest && e.target.closest('a[href^="/services/"]');
+  if (svc) {
+    gtag('event', 'service_click', {service: svc.getAttribute('href').split('/').pop(), page_path: location.pathname});
+  }
 });
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Startup Operator Roles Tracker",
+  "serviceType": "Job listings subscription",
+  "description": "A daily-updated Google Sheet of Founder's Office, Chief of Staff, EIR, Growth and Strategy roles that founders post on LinkedIn, with direct apply links.",
+  "url": "https://rohansurana.com/services/startup-operator-roles-tracker",
+  "image": "https://rohansurana.com/og/startup-operator-roles-tracker.jpg",
+  "provider": {
+    "@type": "Person",
+    "name": "Rohan Surana",
+    "url": "https://rohansurana.com",
+    "sameAs": [
+      "https://www.linkedin.com/in/rohan-surana"
+    ]
+  },
+  "areaServed": "IN",
+  "offers": {
+    "@type": "Offer",
+    "price": "499",
+    "priceCurrency": "INR",
+    "url": "https://rohansurana.com/services/startup-operator-roles-tracker",
+    "availability": "https://schema.org/InStock"
+  }
+}
 </script>
 <meta name="google-site-verification" content="rSZuUws3MXjEv1-rx-bdvgYhT3SgqZwdcEEhuDSw7Ss" />
 </head>

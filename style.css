@@ -813,3 +813,6 @@ body:has(.buy-bar) { padding-bottom: calc(76px + env(safe-area-inset-bottom)); }
 .back-link, .proof-more, .testi-more { position: relative; }
 .back-link::after, .proof-more::after, .testi-more::after { content: ''; position: absolute; left: -8px; right: -8px; top: -12px; bottom: -12px; }
 .proof-more::after, .testi-more::after { top: -14px; bottom: -14px; }
+
+/* Dark mode: deeper orange behind white button text so it stays readable (4.6:1) */
+[data-theme="dark"] .btn-main, [data-theme="dark"] .buy-btn, [data-theme="dark"] .nav-cta { background: #D93B1E; border-color: #D93B1E; }
