@@ -848,13 +848,13 @@ body:has(.buy-bar) { padding-bottom: calc(76px + env(safe-area-inset-bottom)); }
   .plan-grid { grid-template-columns: 1fr; gap: 1.5rem; }
   .plan-card { padding: 1.5rem 1.25rem; }
 }
-/* sticky bar with both plans: price line + 2 buttons on wide screens, 2 equal buttons on phones */
-.buy-bar { grid-template-columns: 1fr auto auto; }
+/* tracker sticky bar (.two-plans) with both plans: price line + 2 buttons on wide screens, 2 equal buttons on phones */
+.buy-bar.two-plans { grid-template-columns: 1fr auto auto; }
 .buy-bar .lbl-short { display: none; }
 @media (max-width: 600px) {
-  .buy-bar { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
-  .buy-bar .buy-bar-price { display: none; }
-  .buy-bar .buy-btn { min-width: 0; width: 100%; padding: 0 0.75rem; font-size: 0.95rem; }
+  .buy-bar.two-plans { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+  .buy-bar.two-plans .buy-bar-price { display: none; }
+  .buy-bar.two-plans .buy-btn { min-width: 0; width: 100%; padding: 0 0.75rem; font-size: 0.95rem; }
   .buy-bar .lbl-long { display: none; }
   .buy-bar .lbl-short { display: inline; }
 }
