@@ -32,8 +32,10 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-7K3B4VB7D1');
 document.addEventListener('click', function(e){
-  if (e.target.closest && e.target.closest('.PaymentButton')) {
-    gtag('event', 'begin_checkout', {currency: 'INR', value: 499, items: [{item_name: 'Startup Operator Roles Tracker'}]});
+  var pay = e.target.closest && e.target.closest('.PaymentButton');
+  if (pay) {
+    var q = !!pay.closest('[data-plan="quarterly"]');
+    gtag('event', 'begin_checkout', {currency: 'INR', value: q ? 1199 : 499, items: [{item_name: 'Startup Operator Roles Tracker', item_variant: q ? '3 months' : '1 month'}]});
   }
   var book = e.target.closest && e.target.closest('a[href*="neetocal.com"]');
   if (book) {
@@ -63,13 +65,24 @@ document.addEventListener('click', function(e){
     ]
   },
   "areaServed": "IN",
-  "offers": {
-    "@type": "Offer",
-    "price": "499",
-    "priceCurrency": "INR",
-    "url": "https://rohansurana.com/services/startup-operator-roles-tracker",
-    "availability": "https://schema.org/InStock"
-  }
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "1 month",
+      "price": "499",
+      "priceCurrency": "INR",
+      "url": "https://rohansurana.com/services/startup-operator-roles-tracker",
+      "availability": "https://schema.org/InStock"
+    },
+    {
+      "@type": "Offer",
+      "name": "3 months",
+      "price": "1199",
+      "priceCurrency": "INR",
+      "url": "https://rohansurana.com/services/startup-operator-roles-tracker",
+      "availability": "https://schema.org/InStock"
+    }
+  ]
 }
 </script>
 <meta name="google-site-verification" content="rSZuUws3MXjEv1-rx-bdvgYhT3SgqZwdcEEhuDSw7Ss" />
@@ -85,14 +98,15 @@ document.addEventListener('click', function(e){
 
 <div class="detail-wrap tracker-page">
 <a class="back-link" href="/#services">← Back to Services</a>
-<p class="detail-tag">40+ new roles added daily &middot; ₹499/month</p>
+<p class="detail-tag">40+ new roles daily &middot; from ₹400/month</p>
 <h1 class="detail-h1">Startup Operator Roles Tracker</h1>
 <p class="detail-sub">Founder's Office, Chief of Staff, EIR, Growth and Strategy roles founders post, so you're among the first to apply.</p>
 <div class="detail-cta">
-<button class="buy-btn" id="heroBuy" type="button" data-buy>Get the Tracker</button>
+<button class="buy-btn" id="heroBuy" type="button" data-buy="quarterly">3 months &middot; ₹1,199</button>
+<button class="buy-btn buy-btn-line" type="button" data-buy="monthly">1 month &middot; ₹499</button>
 <a class="btn-line" href="https://rohansurana.notion.site/3ad900b107b28025b057c5b90f7bfe63" target="_blank">Free Preview ↗</a>
 <p class="buy-status" role="status" aria-live="polite"></p>
-<p class="buy-trust">No auto-renew. Access in ~2 mins.</p>
+<p class="buy-trust"><strong>₹400/month with 3 months. Save ₹298.</strong> One payment, no auto-debit. Access in ~2 mins.</p>
 </div>
 
 <div class="detail-section" style="border-top:none;padding-top:0;">
@@ -214,12 +228,30 @@ document.addEventListener('click', function(e){
 <div class="detail-foot-card">
 <p class="pow-title">Ready to be among <span style="white-space:nowrap">the first to apply?</span></p>
 <p class="detail-foot-note" style="margin-top:-0.5rem;"><strong>"I got 8 interviews using this. Naukri premium gave me 1."</strong> - Vansh, Founder's Office | MSc, London Business School</p>
-<p class="detail-foot-note" style="margin-top:-0.5rem;">₹499/month. No auto-renew.</p>
-<div class="svc-actions" style="margin-top:0;">
-<button class="buy-btn" type="button" data-buy>Get the Tracker</button>
-<a class="btn-line" href="https://rohansurana.notion.site/3ad900b107b28025b057c5b90f7bfe63" target="_blank">Free Preview ↗</a>
+<div class="plan-grid">
+<div class="plan-card plan-best">
+<p class="plan-badge">Best value</p>
+<p class="plan-name">3 months</p>
+<p class="plan-price">₹1,199 <s>₹1,497</s></p>
+<p class="plan-per">₹400/month &middot; Save ₹298 (20%)</p>
+<p class="plan-line">Pay once, covered for 3 months. No monthly renewals, no lost access mid-search.</p>
+<div class="plan-actions">
+<button class="buy-btn" type="button" data-buy="quarterly">Get 3 months</button>
 <p class="buy-status" role="status" aria-live="polite"></p>
 </div>
+</div>
+<div class="plan-card">
+<p class="plan-name">1 month</p>
+<p class="plan-price">₹499</p>
+<p class="plan-per">₹499/month</p>
+<p class="plan-line">30 days of access. Pay again each month to keep it.</p>
+<div class="plan-actions">
+<button class="buy-btn buy-btn-line" type="button" data-buy="monthly">Get 1 month</button>
+<p class="buy-status" role="status" aria-live="polite"></p>
+</div>
+</div>
+</div>
+<p class="detail-foot-note plan-note">One payment, no auto-debit. A small payment gateway fee is added at checkout. Not sure yet? <a href="https://rohansurana.notion.site/3ad900b107b28025b057c5b90f7bfe63" target="_blank">See the free preview ↗</a></p>
 </div>
 <div class="detail-cross" id="calls">
 <p class="cross-eyebrow">45-min live call &middot; ₹699</p>
@@ -246,8 +278,9 @@ document.addEventListener('click', function(e){
 <footer><p>© 2026 Rohan Surana</p></footer>
 <div class="buy-bar" id="buyBar" aria-hidden="true" inert>
 <p class="buy-status" role="status" aria-live="polite"></p>
-<p class="buy-bar-price">₹499<span>/month</span></p>
-<button class="buy-btn" type="button" data-buy>Get the Tracker</button>
+<p class="buy-bar-price">₹400<span>/month with 3 months</span></p>
+<button class="buy-btn" type="button" data-buy="quarterly"><span class="lbl-long">3 months &middot; ₹1,199</span><span class="lbl-short">3 mo &middot; ₹1,199</span></button>
+<button class="buy-btn buy-btn-line" type="button" data-buy="monthly"><span class="lbl-long">1 month &middot; ₹499</span><span class="lbl-short">1 mo &middot; ₹499</span></button>
 </div>
 <script src="../buy.js"></script>
 <script src="../buy-bar.js"></script>
