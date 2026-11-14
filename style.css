@@ -800,7 +800,6 @@ body:has(.buy-bar) { padding-bottom: calc(76px + env(safe-area-inset-bottom)); }
 #services .pow-card, #work .pow-card { display: flex; flex-direction: column; }
 #work .pow-card .pow-metrics { margin-top: auto; }
 #services .pow-card .svc-actions { margin-top: auto; }
-#services .pow-card .card-proof { margin-top: 0; margin-bottom: 1.5rem; }
 /* 4. Journey bullets: coral dots inside the text edge, same as the service pages */
 .tl-desc ul { list-style: none; }
 .tl-desc li { position: relative; padding-left: 1.1rem; }
