@@ -45,6 +45,10 @@ document.addEventListener('click', function(e){
   if (svc) {
     gtag('event', 'service_click', {service: svc.getAttribute('href').split('/').pop(), page_path: location.pathname});
   }
+  var prev = e.target.closest && e.target.closest('a[href*="notion.site"]');
+  if (prev) {
+    gtag('event', 'free_preview_click', {link_position: prev.closest('.detail-cta') ? 'top' : (prev.closest('.detail-foot') ? 'bottom' : 'other'), page_path: location.pathname});
+  }
 });
 </script>
 <script type="application/ld+json">
