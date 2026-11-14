@@ -858,3 +858,30 @@ body:has(.buy-bar) { padding-bottom: calc(76px + env(safe-area-inset-bottom)); }
   .buy-bar .lbl-long { display: none; }
   .buy-bar .lbl-short { display: inline; }
 }
+
+/* tracker hero (2026-11-14): compact plan cards, side by side on every screen, about the same height
+   as the old stacked buttons so the reviews stay on the first phone screen */
+.hero-plans .plan-grid-mini { width: 100%; max-width: 520px; margin-top: 0.75rem; }
+.plan-grid.plan-grid-mini { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.plan-mini { padding: 1.15rem 1rem 1rem; gap: 0.25rem; }
+.plan-mini .plan-badge { left: 1rem; }
+.plan-mini .plan-name { font-size: 0.75rem; }
+.plan-mini .plan-price { font-size: 1.6rem; }
+.plan-mini .plan-price s { font-size: 0.85rem; margin-left: 0.2rem; }
+.plan-mini .plan-per { font-size: 0.85rem; }
+.plan-mini .plan-actions { padding-top: 0.6rem; }
+.plan-mini .buy-btn { height: 46px; min-width: 0; padding: 0 0.75rem; font-size: 0.95rem; }
+.hero-plans .buy-trust { margin-top: 0; }
+.hero-preview { color: var(--accent); font-weight: 700; text-decoration: underline; white-space: nowrap; }
+@media (max-width: 600px) {
+  .plan-grid.plan-grid-mini { grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+  .plan-mini { padding: 1.1rem 0.8rem 0.85rem; }
+}
+@media (max-width: 360px) {
+  .plan-mini { padding: 1.1rem 0.65rem 0.8rem; }
+  .plan-mini .plan-price { font-size: 1.4rem; }
+  .plan-mini .plan-per { font-size: 0.78rem; }
+  .plan-mini .buy-btn { font-size: 0.875rem; padding: 0 0.4rem; }
+}
+.plan-save { font-size: 0.8rem; font-weight: 700; color: var(--ink3); }
+.plan-save s { font-weight: 500; margin-left: 0.15rem; }

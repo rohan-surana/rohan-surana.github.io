@@ -20,7 +20,8 @@ function plan(name){
   return plans[name]={ name:name, id:IDS[name], mount:mount, state:'idle', pendingBtn:null, timer:null };
 }
 function rzpLink(p){ return p.mount.querySelector('a.PaymentButton'); }
-function statusFor(btn){ return btn.parentElement.querySelector('.buy-status'); }
+/* hero plan cards share one status line under both cards; elsewhere the status sits next to the button */
+function statusFor(btn){ var c=btn.closest('.detail-cta')||btn.parentElement; return c.querySelector('.buy-status'); }
 function setStatus(btn,html){ var s=statusFor(btn); if(!s) return; s.innerHTML=html||''; s.classList.toggle('on',!!html); }
 function clearStatuses(){ document.querySelectorAll('.buy-status').forEach(function(s){ s.innerHTML=''; s.classList.remove('on'); }); }
 function busy(btn,on){ btn.classList.toggle('is-loading',on); btn.setAttribute('aria-busy',on?'true':'false'); }
