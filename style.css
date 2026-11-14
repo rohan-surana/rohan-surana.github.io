@@ -269,7 +269,7 @@ nav {
 }
 
 /* SECTIONS */
-.section-divider { height: 1px; background: var(--border); margin: 0 var(--edge); }
+.section-divider { height: 1px; background: var(--rule); margin: 0 var(--edge); }
 .section { padding: var(--space-section) var(--gutter); max-width: var(--container-max); margin: 0 auto; }
 .s-label {
   font-size: 0.9375rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase;
