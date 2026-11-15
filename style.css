@@ -894,3 +894,11 @@ body:has(.buy-bar) { padding-bottom: calc(76px + env(safe-area-inset-bottom)); }
   .buy-bar.two-plans .lbl-short .lbl-sep { display: none; }
   .plan-mini .plan-price s { display: block; margin-left: 0; }
 }
+/* header Email Me (2026-11-15): orange outline, same style as "Get 1 month", so it stays visible
+   without competing with the filled buy and book buttons. Border is taken out of the padding so the size is unchanged. */
+.nav-cta, [data-theme="dark"] .nav-cta {
+  background: transparent; color: var(--accent); border: 2px solid var(--accent); box-shadow: none;
+  padding: calc(0.5rem - 2px) calc(1.35rem - 2px);
+}
+.nav-cta:hover, [data-theme="dark"] .nav-cta:hover { background: var(--accent-light); box-shadow: none; }
+@media (max-width: 860px) { .nav-cta, [data-theme="dark"] .nav-cta { padding: calc(0.5rem - 2px) calc(0.85rem - 2px); } }
