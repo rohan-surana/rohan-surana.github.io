@@ -902,3 +902,8 @@ body:has(.buy-bar) { padding-bottom: calc(76px + env(safe-area-inset-bottom)); }
 }
 .nav-cta:hover, [data-theme="dark"] .nav-cta:hover { background: var(--accent-light); box-shadow: none; }
 @media (max-width: 860px) { .nav-cta, [data-theme="dark"] .nav-cta { padding: calc(0.5rem - 2px) calc(0.85rem - 2px); } }
+/* white buttons as orange outlines (2026-11-15), same look as the header Email Me:
+   "Full Details", "Free Preview", "Resume", "View All Projects" and the LinkedIn / email icon buttons */
+.btn-line, .hero-actions .btn-line, .btn-icon,
+[data-theme="dark"] .btn-line, [data-theme="dark"] .btn-icon { background: transparent; color: var(--accent); border-color: var(--accent); }
+.btn-line:hover, .btn-icon:hover { background: var(--accent-light); }
