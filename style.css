@@ -817,7 +817,7 @@ body:has(.buy-bar) { padding-bottom: calc(76px + env(safe-area-inset-bottom)); }
 /* Dark mode: deeper orange behind white button text so it stays readable (4.6:1) */
 [data-theme="dark"] .btn-main, [data-theme="dark"] .buy-btn, [data-theme="dark"] .nav-cta { background: #D93B1E; border-color: #D93B1E; }
 
-/* TRACKER PLANS (2026-11-14): 3 months (₹1,199) and 1 month (₹499).
+/* TRACKER PLANS (2026-11-14): 3 months (₹999) and 1 month (₹499).
    3 months is the filled button and comes first; 1 month is an outline button. */
 .buy-btn.buy-btn-line { background: transparent; color: var(--accent); box-shadow: none; }
 .buy-btn.buy-btn-line:hover { background: var(--accent-light); box-shadow: none; }
@@ -887,7 +887,7 @@ body:has(.buy-bar) { padding-bottom: calc(76px + env(safe-area-inset-bottom)); }
 .plan-save s { font-weight: 500; margin-left: 0.15rem; }
 .story-after-pricing { margin-top: var(--space-section); }
 /* uniform prices (2026-11-14): very small phones stack the bar label (plan above price) and put the
-   struck-out price under ₹1,199 in the hero card, so the full words still fit */
+   struck-out price under ₹999 in the hero card, so the full words still fit */
 @media (max-width: 360px) {
   .buy-bar.two-plans .buy-btn { line-height: 1.15; }
   .buy-bar.two-plans .lbl-short > span { display: block; }
